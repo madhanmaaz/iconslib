@@ -1,0 +1,350 @@
+:root{
+    --white: #e5e5e5;
+    --bg: #183153;
+    --bg-lite: rgba(0,0,0, 0.3);
+    --bg-hover: rgba(0,0,0, 0.1);;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background: none; outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .5s;
+}
+
+html::-webkit-scrollbar{
+    width: .5rem;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #183153;
+    border-radius: 10px;
+}
+
+body{
+    background: #f0f1f3;
+}
+
+button{
+    position: relative;
+}
+
+button:hover::before{
+    content: attr(d-title);
+    background: var(--bg);
+    position: absolute;
+    color: var(--white);
+    margin-top: -1.5rem;
+    bottom: 100%;
+    padding: .3rem;
+    border-radius: 5px;
+    font-size: .7rem;
+    text-transform: capitalize;
+}
+
+.header{
+    background: #111;
+    color: #e5e5e5;
+    font-size: 1rem;
+    padding: 1rem;
+    text-transform: capitalize;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.header button{
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #e5e5e5;
+    margin: 0 .3rem;
+}
+
+.header button i{
+    padding: .5rem;
+}
+
+.header .navbar{
+    display: flex;
+    align-items: center;
+}
+
+.header .navbar span{
+    padding-left: .3rem;
+}
+
+.search-content{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background:  linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(../src/bg.png);
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+}
+.search-content.active{
+    height: 50vh;
+}
+
+.search-content .search-box{
+    width: 70%;
+    text-align: center;
+}
+
+.search-content .search-box .search-input{
+    display: flex;
+    align-items: center;
+    background: var(--bg);
+    border-radius: 6px;
+    box-shadow: 0 0 10px #000;
+    padding: .2rem .5rem;
+}
+
+.search-content .search-box .search-input i{
+    font-size: 1.3rem;
+}
+
+.search-content .search-box .search-input input{
+    font-size: 1.1rem;
+    padding: .5rem;
+    width: 100%;
+    color: #e5e5e5;
+}
+
+.search-content .search-box .search-input select{
+    background: #bddfff;
+    border-radius: 6px;
+    padding: .4rem;
+    text-transform: uppercase;
+}
+
+.search-content .search-box .search-input option{
+   background: rgb(0, 0, 0);
+   color: #e5e5e5;
+   cursor: pointer;
+}
+
+.search-content .search-box p{
+    padding: 1rem 0;
+    text-transform: capitalize;
+}
+
+.search-content .search-box p i{
+    display: inline-block;
+    color: red;
+    padding: .3rem;
+    animation: aniheart 1s linear infinite;
+    cursor: pointer;
+}
+
+@keyframes aniheart{
+    25%{
+        transform: scale(1.3);
+    }
+    50%{
+        transform: scale(1) rotate(5deg);
+    }
+    75%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1) rotate(-5deg);
+    }
+}
+
+@keyframes anihearth{
+    25%{
+        transform: scale(1.8);
+    }
+    50%{
+        transform: scale(1) rotate(5deg);
+    }
+    75%{
+        transform: scale(1.8);
+    }
+    100%{
+        transform: scale(1) rotate(-5deg);
+    }
+}
+
+.search-content .btns{
+    padding: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-content .btns .recent{
+    background: var(--white);
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.search-content .btns .recent input{
+    width: 100%;
+    padding: .1rem;
+    font-size: 1rem;
+    margin-left: .4rem;
+}
+
+.search-content .btns .recent i{
+    color: var(--bg);
+    font-size: 1.3rem;
+}
+
+.search-content .btns .view{
+    display: flex;
+}
+
+.search-content .btns .view button{
+    padding: .4rem;
+    margin: 0 .2rem;
+    font-size: 1.3rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.icons-container{
+    padding: 1rem 5% 5rem;
+    text-align: center;
+    display: none;
+}
+
+.icons-container.active{
+    display: block;
+}
+
+.icons-container button{
+    cursor: pointer;
+    background: #ffffff;
+    margin: .5rem;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.05);
+}
+
+.icons-container button.grid{
+    padding: 2rem;
+    font-size: 1.7rem;
+}
+
+.icons-container button.list{
+    font-size: 1.5rem;
+    padding: .5rem 5rem;
+}
+
+.icons-container button:hover{
+    transform: scale(1.1);
+}
+
+.icons-container button:focus{
+    transform: scale(1);
+}
+
+.icons-container.not{
+    background: #040205 url(../src/404.gif);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    height: 50vh;
+}
+
+.icons-container .google-icons{
+    font-size: 30px;
+}
+
+.link{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg);
+    display: none;
+    place-items: center;
+}
+
+.link.active{
+    display: grid;
+}
+
+.link div{
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+}
+
+.link div p{
+    padding: .5rem 0;
+    text-transform: capitalize;
+}
+
+.link div div{
+    display: flex;
+    justify-content: center;
+}
+
+.link div div button{
+    background: #000;
+    padding: .5rem;
+    color: var(--white);
+}
+
+.link div div input{
+    background: var(--white);
+    max-width: 800px;
+    padding: .5rem;
+    width: 100%;
+}
+
+.alert-box{
+    position: fixed;
+    top: 3rem;
+    left: 50%;
+    transform: scale(0) translateX(-50%);
+    z-index: 1000;
+}
+
+.alert-box.active{
+    transform: scale(1);
+}
+
+.alert-box div{
+    background: #000;
+    color: #fff;
+    padding: .4rem;
+    border-radius: 8px;
+    text-transform: capitalize;
+    box-shadow: 0 0 1rem #000;
+}
+
+
+@media(max-width: 700px){
+    .search-content .search-box{
+        width: 95%;
+    }
+    .search-content .search-box .search-input select{
+        width: 100px;
+    }
+    .header{
+        position: relative;
+        flex-direction: column;
+    }
+    .icons-container{
+        padding: 1rem 0 5rem;
+    }
+    .icons-container button.list{
+        padding: .5rem 2.5rem;
+    }
+}

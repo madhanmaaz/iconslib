@@ -1,0 +1,9 @@
+a1
+br
+bc
+io
+ma
+re
+so
+bs
+ic
