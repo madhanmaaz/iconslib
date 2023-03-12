@@ -66,7 +66,8 @@
         <div>
             <p>add this link tag in html</p>
             <div>
-                <input id="linktag" value='<link rel="stylesheet" href="https://freeicons.netlify.app/dists/css/all.min.css">'>
+                <input id="linktag">
+                <script>document.querySelector("#linktag").value = `<link rel="stylesheet" href="${location.href}/dists/css/all.min.css">`;</script>
                 <button id="linktag-btn">copy</button>
             </div>
         </div>
